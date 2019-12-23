@@ -2,17 +2,11 @@
 // It should return the repeated character, else if no characters are repeated it should return null.
 
 let findRepeat = (str) => {
-    const map = new Map;
-    let result;
-    let maxCount = 0;
     for (let ch of str) {
-        let count = (map.get(ch) || 0) + 1;
-        map.set(ch, count);
-        if (count > maxCount) {
-            maxCount = count;
-            result = ch;
+        if(str.indexOf(ch) !== str.lastIndexOf(ch)) {
+          return ch;
         }
     }
-    return result;
+    return null;
 }
-console.log(findRepeat("desid"));
+console.log(findRepeat("akshayasa"));
